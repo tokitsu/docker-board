@@ -13,7 +13,7 @@ class BoardsController < ApplicationController
 
   def create
     Board.create(board_params)
-    redirect_to board
+    redirect_to boards_path
   end
 
   def edit
@@ -23,7 +23,8 @@ class BoardsController < ApplicationController
   def update
     @board = Board.find(params[:id])
     @board.update(board_params)
-    redirect_to board
+
+    redirect_to board_path
   end
   private
 
